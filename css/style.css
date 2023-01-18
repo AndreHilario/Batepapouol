@@ -29,10 +29,29 @@ body {
     box-shadow: 0px -4px 6px 0px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 
     position: absolute;
     bottom: 0;
+}
+.rodape input {
+    border: 1px solid #FFFFFF;
+    margin-left: 17px;
+    color: #000000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+    
+input::placeholder {
+    color: black;
+    font-style: italic;
+    width: 145px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    border: 1px solid #FFFFFF;
 }
 .rodape ion-icon {
     width: 26px;
