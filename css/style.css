@@ -22,6 +22,67 @@ body {
     height: 45px;
     margin-right: 17px;
 }
+.mensagens {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mensagens .status {
+    width: 100%;
+    min-height: 40px;
+    background-color: #DCDCDC;
+    margin-top: 4px;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+}
+.status p, .reservadas p, .normais p{
+    color:#000000;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 8px;
+    margin-right: 9px;
+}
+span {
+    color: #AAAAAA;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+}
+.status mark {
+    font-weight: 700;
+    background-color: #DCDCDC;
+}
+.reservadas mark {
+    font-weight: 700;
+    background-color:#FFDEDE ;
+}
+.normais mark {
+    font-weight: 700;
+    background-color: #FFFFFF;
+}
+.mensagens .reservadas {
+    width: 100%;
+    min-height: 40px;
+    background-color: #FFDEDE;
+    margin-top: 4px;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+}
+.mensagens .normais {
+    width: 100%;
+    min-height: 40px;
+    background-color: #FFFFFF;
+    margin-top: 4px;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+}
 .rodape {
     background-color: #FFFFFF;
     width: 100%;
