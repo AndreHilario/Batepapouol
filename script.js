@@ -17,6 +17,8 @@ enviarNomeDoUsuario();
 function nomeDoUsuarioChegou(answer){
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
+
+    setInterval(manterConexao, 5000);
 }
 
 function nomeDoUsuarioNaoChegou(error){
@@ -25,13 +27,39 @@ function nomeDoUsuarioNaoChegou(error){
     console.log(error);
     if(statusCode === 400){
         alert("Este nome já está online");
-        nomeDoUsuario = prompt("Digite seu nome");
+        nomeDoUsuario = prompt("Digite outro nome");
     } else if(statusCode === 200){
         return;
     }
 }
+const parada = setInterval(manterConexao, 5000);
+function manterConexao(){
+
+    
+    const nomeOnline = {
+        name: nomeDoUsuario
+    };
+
+    const prom = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nomeOnline);
+    prom.then(usuarioOnline);
+    prom.catch(erroUsuarioOffline);
+}
+function usuarioOnline(resposta){
+    console.log('Usuário online');
+    console.log(resposta);
+
+
+}
+function erroUsuarioOffline(erro){
+    console.log('Aconteceu um erro ou usuário offline');
+    console.log(erro);
+
+    clearInterval(parada);
+}
+
 function exibirMensagens(){ 
     const chat = document.querySelector('.mensagens');
+    
     for(let i = 0; i < mens.length; i++){ 
         if (mens[i].type === "status"){   
             let template = `
