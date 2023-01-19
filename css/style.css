@@ -103,6 +103,9 @@ span {
     font-size: 18px;
     line-height: 21px;
 }
+input:focus {
+    outline: none;
+  } 
     
 input::placeholder {
     color: black;
