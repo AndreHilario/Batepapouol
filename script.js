@@ -17,7 +17,7 @@ enviarNomeDoUsuario();
 function nomeDoUsuarioChegou(answer){
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
-
+    buscarMensagensNoServidor();
     setInterval(manterConexao, 5000);
 }
 
@@ -100,7 +100,7 @@ function deuErroAoPegarMensagens(error){
     console.log('Deu erro ao pergar as mensagens no servidor'); 
     console.log(error); 
 }
-buscarMensagensNoServidor();
+
 
 
 
