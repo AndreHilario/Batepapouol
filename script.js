@@ -17,12 +17,12 @@ enviarNomeDoUsuario();
 function nomeDoUsuarioChegou(answer){
 
     console.log('Deu tudo certo, nome chegou!');
-    buscarMensagensNoServidor();
     console.log(answer);
 
     
     setInterval(manterConexao, 5000);
 }
+buscarMensagensNoServidor();
 
 function nomeDoUsuarioNaoChegou(error){
 
