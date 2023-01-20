@@ -11,6 +11,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .topo img {
     height: 53px;
@@ -125,9 +129,9 @@ input::placeholder {
 .rodape ion-icon {
     width: 26px;
     height: 26px;
-    margin-right: 27px;
 }
 .rodape button {
     background-color: #FFFFFF;
     border: 2px solid #FFFFFF;
+    margin-right: 27px;
 }
