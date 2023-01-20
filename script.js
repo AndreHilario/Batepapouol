@@ -2,7 +2,7 @@ let mens = [];
 
 let nomeDoUsuario = prompt("Digite seu nome");
 enviarNomeDoUsuario();
-setTimeout(buscarMensagensNoServidor, 5000);
+
 function enviarNomeDoUsuario(){
 
     const nome = {
@@ -19,7 +19,7 @@ function nomeDoUsuarioChegou(answer){
 
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
-
+    buscarMensagensNoServidor();
     setInterval(manterConexao, 5000);
 }
 
