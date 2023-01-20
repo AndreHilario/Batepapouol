@@ -18,6 +18,7 @@ function nomeDoUsuarioChegou(answer){
     buscarMensagensNoServidor();
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
+    
     setInterval(manterConexao, 5000);
 }
 
@@ -84,7 +85,7 @@ function exibirMensagens(){
 
 function buscarMensagensNoServidor(){ 
     
-    const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages/');
+    const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promise.then(mensagensChegaram); 
     promise.catch(deuErroAoPegarMensagens); 
 
