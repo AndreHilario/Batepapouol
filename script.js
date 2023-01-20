@@ -13,7 +13,7 @@ function enviarNomeDoUsuario(){
     promessa.catch(nomeDoUsuarioNaoChegou);
 }
 enviarNomeDoUsuario();
-buscarMensagensNoServidor();
+
 function nomeDoUsuarioChegou(answer){
     buscarMensagensNoServidor();
     console.log('Deu tudo certo, nome chegou!');
