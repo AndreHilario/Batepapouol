@@ -13,16 +13,28 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="topo">
-        <img src="img/logo 1.png" alt="Logo do Uol">
-        <button data-test="open-participants"><ion-icon name="people"></ion-icon></button>
+    <div data-test="overlay" class="container">
+        <div class="topo">
+            <img src="img/logo 1.png" alt="Logo do Uol">
+            <button data-test="open-participants"><ion-icon name="people"></ion-icon></button>
+        </div>
+        <div class="mensagens">
+        
+        </div>
+        <div class="rodape">
+            <input data-test="input-message" type="text" class ="texto" placeholder="Escreva aqui...">
+            <button data-test="send-message" onclick="enviarMensagens()"><ion-icon name="paper-plane-outline"></ion-icon> </button>
+        </div>
     </div>
-    <div class="mensagens">
-    
-    </div>
-    <div class="rodape">
-        <input data-test="input-message" type="text" class ="texto" placeholder="Escreva aqui...">
-        <button data-test="send-message" onclick="enviarMensagens()"><ion-icon name="paper-plane-outline"></ion-icon> </button>
+    <div class="menu-participantes">
+        <div data-test="all" class="todos"></div>
+        <div data-test="participant" class="participante"></div>
+        <div data-test="participant" class="participante"></div>
+        <div data-test="check" class="check"></div>
+        <div data-test="public" class="publico"></div>
+        <div data-test="private" class="reservado"></div>
+        <div data-test="check" class="check"></div>
+        <div data-test="recipient" class="receber"></div>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
