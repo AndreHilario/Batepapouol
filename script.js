@@ -22,7 +22,6 @@ function nomeDoUsuarioChegou(answer){
     
     setInterval(manterConexao, 5000);
 }
-buscarMensagensNoServidor();
 
 function nomeDoUsuarioNaoChegou(error){
 
@@ -36,6 +35,7 @@ function nomeDoUsuarioNaoChegou(error){
     }
 }
 const parada = setInterval(manterConexao, 5000);
+buscarMensagensNoServidor();
 function manterConexao(){
 
     
