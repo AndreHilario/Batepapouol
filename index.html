@@ -15,14 +15,14 @@
 <body>
     <div class="topo">
         <img src="img/logo 1.png" alt="Logo do Uol">
-        <ion-icon name="people"></ion-icon>
+        <button data-test="open-participants"><ion-icon name="people"></ion-icon></button>
     </div>
     <div class="mensagens">
     
     </div>
     <div class="rodape">
-        <input type="text" class ="texto" placeholder="Escreva aqui...">
-        <div onclick="enviarMensagens()"><ion-icon name="paper-plane-outline"></ion-icon> </div>
+        <input data-test="input-message" type="text" class ="texto" placeholder="Escreva aqui...">
+        <button data-test="send-message" onclick="enviarMensagens()"><ion-icon name="paper-plane-outline"></ion-icon> </button>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>

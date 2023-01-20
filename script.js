@@ -63,18 +63,18 @@ function exibirMensagens(){
     for(let i = 0; i < mens.length; i++){ 
         if (mens[i].type === "status"){   
             let template = `
-                <div class="status"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> ${mens[i].text}</p></div>`; 
+                <div data-test="message" class="status"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> ${mens[i].text}</p></div>`; 
                 
                 chat.innerHTML = chat.innerHTML + template; 
         } else if (mens[i].type ==="message"){ 
             let template2 = `
-                <div class="normais"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> para 
+                <div data-test="message" class="normais"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> para 
                 <mark>${mens[i].to}</mark>: ${mens[i].text}</p></div>`; 
                 
                 chat.innerHTML = chat.innerHTML + template2;  
         } else if (mens[i].type ==="private_message" && (mens[i].from === nomeDoUsuario || mens[i].to === nomeDoUsuario)){ 
             let template3 = `
-                <div class="reservadas"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> reservadamente para 
+                <div data-test="message" class="reservadas"><p><span>(${mens[i].time})</span> <mark>${mens[i].from}</mark> reservadamente para 
                 <mark>${mens[i].to}</mark>: ${mens[i].text}</p></div>`; 
                 
                 chat.innerHTML = chat.innerHTML + template3; 
@@ -83,6 +83,7 @@ function exibirMensagens(){
 } 
 
 function buscarMensagensNoServidor(){ 
+    
     const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promise.then(mensagensChegaram); 
     promise.catch(deuErroAoPegarMensagens); 

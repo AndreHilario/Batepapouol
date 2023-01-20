@@ -22,6 +22,10 @@ body {
     height: 45px;
     margin-right: 17px;
 }
+.topo button {
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
 .mensagens {
     margin-top: 22px;
     display: flex;
@@ -122,4 +126,8 @@ input::placeholder {
     width: 26px;
     height: 26px;
     margin-right: 27px;
+}
+.rodape button {
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
 }
