@@ -12,7 +12,6 @@ function enviarNomeDoUsuario(){
     promessa.then(nomeDoUsuarioChegou);
     promessa.catch(nomeDoUsuarioNaoChegou);
 
-    buscarMensagensNoServidor();
 }
 enviarNomeDoUsuario();
 
@@ -20,6 +19,8 @@ function nomeDoUsuarioChegou(answer){
 
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
+    
+    buscarMensagensNoServidor();
     setInterval(manterConexao, 5000);
 }
 
