@@ -11,6 +11,8 @@ function enviarNomeDoUsuario(){
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', nome );
     promessa.then(nomeDoUsuarioChegou);
     promessa.catch(nomeDoUsuarioNaoChegou);
+
+    buscarMensagensNoServidor();
 }
 enviarNomeDoUsuario();
 
@@ -18,8 +20,6 @@ function nomeDoUsuarioChegou(answer){
 
     console.log('Deu tudo certo, nome chegou!');
     console.log(answer);
-
-    
     setInterval(manterConexao, 5000);
 }
 
@@ -35,7 +35,7 @@ function nomeDoUsuarioNaoChegou(error){
     }
 }
 const parada = setInterval(manterConexao, 5000);
-buscarMensagensNoServidor();
+
 function manterConexao(){
 
     
