@@ -63,6 +63,7 @@ function erroUsuarioOffline(erro){
 function exibirMensagens(){ 
     const chat = document.querySelector('.mensagens');
     
+    chat.innerHTML = '';
     for(let i = 0; i < mens.length; i++){ 
         if (mens[i].type === "status"){   
             let template = `
@@ -82,9 +83,11 @@ function exibirMensagens(){
                 
                 chat.innerHTML = chat.innerHTML + template3; 
             } 
+    document.querySelector(".mensagens").lastChild.scrollIntoView(true);
     }
+    
 } 
-
+setInterval(buscarMensagensNoServidor, 3000);
 function buscarMensagensNoServidor(){ 
     
     const promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
@@ -120,7 +123,7 @@ function enviarMensagens(){
 
     promessa2.then(mensagemDigitadaChegou);
     promessa2.catch(deuRuimAoEnviar);
-    textoDaMensagem.value = '';
+    
 }
 
 function mensagemDigitadaChegou(resposta){
