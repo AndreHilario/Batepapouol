@@ -31,7 +31,7 @@ body {
     border: 2px solid #FFFFFF;
 }
 .mensagens {
-    margin-top: 22px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
