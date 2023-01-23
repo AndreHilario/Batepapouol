@@ -140,15 +140,15 @@ function deuRuimAoEnviar(erro){
     window.location.reload();
 }
 function abrirMenu(){
-    const abrirMenu = document.querySelector('.menu-lateral');
-    abrirMenu.classList.remove('escondido');
+    const abrir = document.querySelector('.menu-lateral');
+    abrir.classList.remove('escondido');
 
     buscarParticipantes();
 }
 
 function fecharMenu(){
-    const fecharMenu = document.querySelector('.menu-lateral');
-    fecharMenu.classList.add('escondido');
+    const fechar= document.querySelector('.menu-lateral');
+    fechar.classList.add('escondido');
 }
 
 function buscarParticipantes(){
@@ -175,7 +175,8 @@ function erroAoBuscarParticipantes(erro){
 
 function exibirParticipantes(){
     const menu = document.querySelector('.participantes');
-
+    menu.innerHTML = '';
+    
     for(let i = 0; i < participantes.length; i++){
         let template4 = `<div data-test="participant" onclick="exibirCheck(this)" class="usuario">
         <ion-icon name="person-circle"></ion-icon>
