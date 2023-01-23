@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div data-test="overlay" class="container">
+    <div class="container">
         <div class="topo">
             <img src="img/logo 1.png" alt="Logo do Uol">
-            <button data-test="open-participants"><ion-icon name="people"></ion-icon></button>
+            <button data-test="open-participants" onclick="abrirMenu()"><ion-icon name="people"></ion-icon></button>
         </div>
         <div class="mensagens">
         
@@ -26,16 +26,29 @@
             <button data-test="send-message" onclick="enviarMensagens()"><ion-icon name="paper-plane-outline"></ion-icon> </button>
         </div>
     </div>
-    <div class="menu-participantes">
-        <div data-test="all" class="todos"></div>
-        <div data-test="participant" class="participante"></div>
-        <div data-test="participant" class="participante"></div>
-        <div data-test="check" class="check"></div>
-        <div data-test="public" class="publico"></div>
-        <div data-test="private" class="reservado"></div>
-        <div data-test="check" class="check"></div>
-        <div data-test="recipient" class="receber"></div>
-        
+    <div class="menu-lateral escondido">
+        <div data-test="overlay" onclick="fecharMenu()" class="overlay"></div>
+        <div class="menu-participantes">
+            <div class="texto1">Escolha um contato<br> para enviar mensagem:</div>
+            <div data-test="all" onclick="exibirCheck(this)" class="todos">
+                <ion-icon name="people"></ion-icon>
+                <p>Todos</p>
+                <div data-test="check" class="escondido check"><ion-icon name="checkmark"></ion-icon></div>
+            </div>
+            <div class="participantes"></div>
+            <div class="texto1">Escolha a visibilidade:</div>
+            <div data-test="public" onclick="exibirCheck(this)" class="publico">
+                <ion-icon name="lock-open"></ion-icon>
+                <p>Público</p>
+                <div data-test="check" class="escondido check"><ion-icon name="checkmark"></ion-icon></div>
+            </div>
+            <div data-test="private" onclick="exibirCheck(this)" class="reservado">
+                <ion-icon name="lock-closed"></ion-icon>
+                <p>Reservadamente</p>
+                <div data-test="check" class="escondido check"><ion-icon name="checkmark"></ion-icon></div>
+            </div>
+            <div data-test="recipient" class="receber"></div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>

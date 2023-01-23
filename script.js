@@ -1,4 +1,5 @@
 let mens = [];
+let participantes = [];
 
 let nomeDoUsuario = prompt("Digite seu nome");
 enviarNomeDoUsuario();
@@ -52,7 +53,6 @@ function usuarioOnline(resposta){
     console.log('Usuário online');
     console.log(resposta);
 
-
 }
 function erroUsuarioOffline(erro){
     console.log('Aconteceu um erro ou usuário offline');
@@ -85,7 +85,8 @@ function exibirMensagens(){
                 chat.innerHTML = chat.innerHTML + template3; 
             } 
     document.querySelector(".mensagens").lastChild.scrollIntoView(true);
-    }   
+    }
+
 } 
 
 function buscarMensagensNoServidor(){ 
@@ -122,7 +123,7 @@ function enviarMensagens(){
     const promessa2 = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages' , mensagem);
 
     promessa2.then(mensagemDigitadaChegou);
-    promessa2.catch(deuRuimAoEnviar);    
+    promessa2.catch(deuRuimAoEnviar);
 }
 
 function mensagemDigitadaChegou(resposta){
@@ -137,6 +138,63 @@ function deuRuimAoEnviar(erro){
     console.log(erro);
 
     window.location.reload();
+}
+function abrirMenu(){
+    const abrirMenu = document.querySelector('.menu-lateral');
+    abrirMenu.classList.remove('escondido');
+
+    buscarParticipantes();
+}
+
+function fecharMenu(){
+    const fecharMenu = document.querySelector('.menu-lateral');
+    fecharMenu.classList.add('escondido');
+}
+
+function buscarParticipantes(){
+    const promessa3 = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants');
+
+    promessa3.then(participantesDoChat);
+    promessa3.catch(erroAoBuscarParticipantes);
+}
+
+function participantesDoChat(resposta){
+    console.log('Participantes do chat foram encontrados');
+    console.log(resposta);
+
+    participantes = resposta.data;
+
+    exibirParticipantes();
+    setInterval(exibirParticipantes, 10000);
+}
+
+function erroAoBuscarParticipantes(erro){
+    console.log('Não foi possível encontrar os participantes');
+    console.log(erro);
+}
+
+function exibirParticipantes(){
+    const menu = document.querySelector('.participantes');
+
+    for(let i = 0; i < participantes.length; i++){
+        let template4 = `<div data-test="participant" onclick="exibirCheck(this)" class="usuario">
+        <ion-icon name="person-circle"></ion-icon>
+        <p>${participantes[i].name}</p>
+        <div data-test="check" class="escondido check"><ion-icon name="checkmark"></ion-icon></div></div>`;
+
+        menu.innerHTML = menu.innerHTML + template4;
+    }
+    
+}
+
+function exibirCheck(valorClicado){
+    const checkAnterior = document.querySelector('.participantes .escondido').lastChild;
+
+    if(checkAnterior !== null){
+        checkAnterior.classList.add('escondido');
+    }
+
+    valorClicado.lastChild.classList.remove('escondido');
 }
 
 
