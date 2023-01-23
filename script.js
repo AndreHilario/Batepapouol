@@ -85,8 +85,7 @@ function exibirMensagens(){
                 chat.innerHTML = chat.innerHTML + template3; 
             } 
     document.querySelector(".mensagens").lastChild.scrollIntoView(true);
-    }
-    
+    }   
 } 
 
 function buscarMensagensNoServidor(){ 
@@ -123,8 +122,7 @@ function enviarMensagens(){
     const promessa2 = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages' , mensagem);
 
     promessa2.then(mensagemDigitadaChegou);
-    promessa2.catch(deuRuimAoEnviar);
-    
+    promessa2.catch(deuRuimAoEnviar);    
 }
 
 function mensagemDigitadaChegou(resposta){
